@@ -7,8 +7,8 @@ public class MainClass {
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList<String>();
 		list = LoadingXML.load();
-		
-		
+		Data.enterValues();
+		ReadingXML.read(list);
 		
 		
 		
