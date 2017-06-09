@@ -9,7 +9,7 @@ public class Data {
 
 	private static Integer date_start_i;
 	private static Integer date_end_i;
-	
+
 	private static int counter;
 
 	static Scanner in = new Scanner(System.in);
@@ -22,7 +22,8 @@ public class Data {
 		do {
 
 			currency = in.nextLine();
-			if (!currency.equals("USD") && !currency.equals("EUR") && !currency.equals("CHF") && !currency.equals("GBP")) {
+			if (!currency.equals("USD") && !currency.equals("EUR") && !currency.equals("CHF")
+					&& !currency.equals("GBP")) {
 				System.out.println("Wrong");
 				System.out.println("You can enter only USD,EUR,CHF,GBP in big letters");
 			}
@@ -39,8 +40,13 @@ public class Data {
 				System.out.println("03-01-2017(day-month-year) enter like this 170103");
 			}
 		} while (date_start.length() != 6);
-
-		date_start_i = Integer.parseInt(date_start);
+		try {
+			date_start_i = Integer.parseInt(date_start);
+		} catch (NumberFormatException e) {
+			System.out.println("Wrong start date format");
+			System.out.println("Start again");
+			System.exit(0);
+		}
 
 		System.out.println("Enter the end date");
 		System.out.println("In format like this example");
@@ -52,9 +58,16 @@ public class Data {
 
 				System.out.println("03-01-2017(day-month-year) enter like this 170103");
 			}
-			date_end_i = Integer.parseInt(date_end);
+			try {
+				date_end_i = Integer.parseInt(date_end);
+			} catch (NumberFormatException e) {
+				System.out.println("Wrong end date format");
+				System.out.println("Start again");
+				System.exit(0);
+			}
 			if (date_end_i < date_start_i) {
 				System.out.println("You  entered the end date which is before start date");
+				System.out.println("Enter again end date");
 			}
 		} while (date_end.length() != 6 || date_end_i < date_start_i);
 
@@ -67,17 +80,17 @@ public class Data {
 	public static Integer getDate_start_i() {
 		return date_start_i;
 	}
-	
+
 	public static Integer getDate_end_i() {
 		return date_end_i;
 	}
-	
+
 	public static void setCounter(int counter_h) {
 		counter = counter_h;
 	}
-	
+
 	public static int getCounter() {
 		return counter;
 	}
-	
+
 }

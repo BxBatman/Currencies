@@ -4,17 +4,16 @@ import java.util.ArrayList;
 
 public class Calculations {
 
-	public static double mean(double sum,ArrayList dev) {
+	public static double mean(ArrayList dev) {
 		
-		sum/=Data.getCounter();
+		
 		
 		
 		double total = 0;
 
 		for(int i = 0; i < dev.size(); i++){
 			double help = (double)dev.get(i);
-			System.out.println(help);
-		   total +=  help;
+			total +=  help;
 		}
 
 		double mean = total / dev.size();
@@ -32,15 +31,18 @@ public class Calculations {
 		
 	}
 	
-	public static void dev2(ArrayList dev) {
+	public static void dev2(double buy_sum,ArrayList dev) {
 		double sum=0;
 		for(int i = 0; i < dev.size(); i++){
 			double help = (double)dev.get(i);
 			sum+=help;
 		}
+		
 		sum/=dev.size();
 		sum=Math.sqrt(sum);
-		System.out.println(sum);
+		buy_sum/=(double)Data.getCounter();
+		System.out.println("Average for purchase amount: "+buy_sum);
+		System.out.println("Standard deviation: "+sum);
 		
 		
 	}
