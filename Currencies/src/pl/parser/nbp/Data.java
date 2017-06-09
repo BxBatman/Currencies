@@ -22,7 +22,7 @@ public class Data {
 		do {
 
 			currency = in.nextLine();
-			if (!cur.equals("USD") && !currency.equals("EUR") && !currency.equals("CHF") && !currency.equals("GBP")) {
+			if (!currency.equals("USD") && !currency.equals("EUR") && !currency.equals("CHF") && !currency.equals("GBP")) {
 				System.out.println("Wrong");
 				System.out.println("You can enter only USD,EUR,CHF,GBP in big letters");
 			}
@@ -60,7 +60,9 @@ public class Data {
 
 	}
 
-	
+	public static String getCurrency() {
+		return currency;
+	}
 
 	public static Integer getDate_start_i() {
 		return date_start_i;
