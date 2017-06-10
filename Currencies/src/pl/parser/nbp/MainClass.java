@@ -18,7 +18,6 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList<String>();
-		ArrayList dev = new ArrayList<Double>();
 		list = LoadingXML.load();
 		Data.enterValues();
 		ReadingXML.read(list);

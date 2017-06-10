@@ -2,6 +2,8 @@ package pl.parser.nbp;
 
 import java.util.Scanner;
 
+//this class store things like currency,the start date and end date, 
+//loads them from the user and checks if there is no mistake
 public class Data {
 	private static String currency;
 	private static String date_start;
@@ -10,7 +12,7 @@ public class Data {
 	private static Integer date_start_i;
 	private static Integer date_end_i;
 
-	private static int counter;
+	private static int counter;  //counter which will be used to calculate average
 
 	static Scanner in = new Scanner(System.in);
 
